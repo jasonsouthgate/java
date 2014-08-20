@@ -52,7 +52,7 @@ class java (
       $java_home = "${java_install_dir}/jdk1.8.0"
     }
     '7': {
-      $java_download_uri = "http://download.oracle.com/otn-pub/java/jdk/7u60-b19/jdk-7u60-linux-{plat_filename}.tar.gz"
+      $java_download_uri = "http://download.oracle.com/otn-pub/java/jdk/7u60-b19/jdk-7u60-linux-${plat_filename}.tar.gz"
       $java_home = "${java_install_dir}/jdk1.7.0"
     }
     default: {
