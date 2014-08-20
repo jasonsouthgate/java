@@ -22,11 +22,11 @@
 #   include java
 #
 class java (
-  $java_version       = hiera('tomcat::java_version', '7' ),
-  $java_install_dir   = hiera('tomcat::java_install_dir', '/opt' ),
-  $platform           = hiera('tomcat::platform', 'x64' ),
-  $use_cache          = hiera('tomcat::use_cache', false ),
-  $env_path           = hiera('tomcat::env_path', '/etc/profile.d/tomcat.sh')
+  $java_version       = '7',
+  $java_install_dir   = '/opt',
+  $platform           = 'x64',
+  $use_cache          = false,
+  $env_path           = '/etc/profile.d/tomcat.sh'
 ) {
 
   Exec { path    => ['/usr/bin', '/usr/sbin', '/bin', '/sbin',] }
