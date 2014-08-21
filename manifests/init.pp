@@ -54,7 +54,7 @@ class java (
     }
     '7': {
       $java_download_uri = "http://download.oracle.com/otn-pub/java/jdk/7u67-b01/jdk-7u67-linux-${plat_filename}.tar.gz"
-      $java_home = "${java_install_dir}/jdk1.7.0"
+      $java_home = "${java_install_dir}/jdk1.7.0_67"
     }
     default: {
       fail("Unsupported java_version: ${java_version}.")
