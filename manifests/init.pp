@@ -128,4 +128,9 @@ class java (
     ensure => link,
     target => "${java_home}/bin/java",
   }
+
+  file { '/usr/bin/java':
+    ensure => link,
+    target => $symlink,
+  }
 }
