@@ -124,8 +124,8 @@ class java (
     onlyif  => "echo $PATH | grep '/opt/java/bin'",
   }
   
-  file { "${java_home}/bin/java":
+  file { $symlink:
     ensure => link,
-    target => $symlink,
+    target => "${java_home}/bin/java",
   }
 }
