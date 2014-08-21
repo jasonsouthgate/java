@@ -22,11 +22,12 @@
 #   include java
 #
 class java (
-  $java_version       = '7',
-  $java_install_dir   = '/opt',
-  $platform           = 'x64',
-  $use_cache          = false,
-  $env_path           = '/etc/profile.d/tomcat.sh'
+  $java_version     = '7',
+  $java_install_dir = '/opt',
+  $platform         = 'x64',
+  $use_cache        = false,
+  $env_path         = '/etc/profile.d/tomcat.sh',
+  $symlink          = '/etc/alternatives/java',
 ) {
 
   Exec { path    => ['/usr/bin', '/usr/sbin', '/bin', '/sbin',] }
@@ -121,5 +122,10 @@ class java (
     command => "bash -c 'source ${env_path}'",
     require => Exec['set_java_path'],
     onlyif  => "echo $PATH | grep '/opt/java/bin'",
+  }
+  
+  file { "${java_home}/bin/java":
+    ensure => link,
+    target => $symlink,
   }
 }
