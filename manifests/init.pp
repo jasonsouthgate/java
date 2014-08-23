@@ -79,7 +79,7 @@ class java (
       cwd     => $java_install_dir,
       creates => "${java_install_dir}/${java_installer_filename}",
       command => "wget --no-check-certificate --no-cookies --header \"Cookie: oraclelicense=accept-securebackup-cookie\" ${java_download_uri} -O ${java_installer_filename}",
-      timeout => 600,
+      timeout => 1200,
     }
     file { "${java_install_dir}/${java_installer_filename}":
       mode    => '0755',
